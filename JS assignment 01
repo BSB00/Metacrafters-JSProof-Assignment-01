@@ -1,0 +1,58 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+let carNFTs = [];
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT (make , model , year , color , horsepower , topSpeed , price) {
+    let carNFT = {
+        make: make,
+        model: model,
+        year: year,
+        color: color,
+        horsepower: horsepower,
+        topSpeed: topSpeed,
+        price: price
+    }
+    carNFTs.push(carNFT);
+
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+    for (let i = 0; i < carNFTs.length; i++) {
+        console.log("\n\n_____________________ CAR NFT _________________________\n\n" );
+        console.log("Make: " + carNFTs[i].make);
+        console.log("Model: " + carNFTs[i].model);
+        console.log("Year: " + carNFTs[i].year);
+        console.log("Color: " + carNFTs[i].color);
+        console.log("Horsepower: " + carNFTs[i].horsepower);
+        console.log("Top Speed: " + carNFTs[i].topSpeed);
+        console.log("Price: " + carNFTs[i].price);
+        console.log("\n\n_____________________* * * * *_________________________\n" );
+    }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("Total Car NFTs Minted so Far: " + carNFTs.length);
+}
+
+// call your functions below this line
+mintNFT("Toyota", "Supra", 2022, "Red", 400, 180, "$100,000");
+mintNFT("Tesla", "Model S", 2023, "White", 600, 200, "$120,000");
+mintNFT("Ford", "Mustang GT", 2024, "Blue", 450, 190, "$90,000");
+mintNFT("Porsche", "911", 2022, "Black", 480, 195, "$150,000");
+listNFTs();
+getTotalSupply();
+
